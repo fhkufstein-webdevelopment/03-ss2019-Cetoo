@@ -8,6 +8,8 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     this.minLength = 8; //this is what we defined and what we need to consider in our length check
 
     //this attributes are set with our constructor
+
+    <!--$ anstatt von Document.get.......-->
     this.wrapperField = $(wrapperId);
     this.passwordField = $(passwordInputFieldId);
     this.passwordSubmitButton = $(passwordSubmitButtonId);
@@ -20,6 +22,8 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     //if we enter the password field (focus is set) - JavaScript Method "onfocus" for an input field - again in our case the field this.passwordField
     //if we are in the password field an enter text - JavaScript Method "onkeyup" or "onkeup" - again in our case the field this.passwordField
     //if we try to click the submit button - JavaScript Method "onclick" - in our case this.passwordSubmitButton
+
+    <!-- Bei den functions bleibt hier jeweils das (on) und = weg -->
 
     this.passwordField.blur(function() {
         //the keyword "this" is always referring to its context.
@@ -50,6 +54,8 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
             var hasSpecialChars = this.checkForSpecialCharacters();
 
             //if it is long enough and has a special character - everything is fine
+
+            <!--Komplexer geschrieben als in der normalen Datei-->
             if(longEnough && hasSpecialChars) {
                 this.wrapperField.removeClass(this.warningClass + ' ' + this.errorClass).addClass(this.successClass);
                 this.passwordSubmitButton.attr('disabled', false);
